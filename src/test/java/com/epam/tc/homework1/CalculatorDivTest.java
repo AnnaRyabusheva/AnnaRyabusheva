@@ -7,11 +7,11 @@ import org.testng.annotations.Test;
 
 public class CalculatorDivTest extends CalculatorBaseTest {
 
-    @Test
-    public void calculatorDivTest() {
+    @Test(dataProviderClass = DataProviderDataTestForAllTests.class, dataProvider = "divData")
+    public void calculatorDivTest(long a, long b, long expected) {
 
-        long actual = calculator.div(2, 2);
-        assertEquals(actual, 1);
+        long actual = calculator.div(a, b);
+        assertEquals(actual, expected);
     }
 
     @Test

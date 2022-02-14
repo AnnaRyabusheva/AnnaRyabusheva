@@ -15,6 +15,14 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <checkstyle.version>9.3</checkstyle.version>
     <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>7.4.0</version>
+    <scope>test</scope>
+    <groupId>org.assertj</groupId>
+    <artifactId>assertj-core</artifactId>
+    <version>3.22.0</version>
+    <scope>test</scope>
 
   </properties>
 
@@ -29,7 +37,8 @@
     <profile>
       <id>homework1-mul-sum-calculator-test-suite</id>
       <properties>
-        <suite.xml.name>${project.basedir}/src/test/resources/com/epam/training/center/homework1/MultiplyAndDivCalculatorTestSuite.xml</suite.xml.name>
+        <suite.xml.name>${project.basedir}/src/test/resources/com/epam/training/center/homework1/MultiplyAndDivCalculatorTestSuite.xml
+        </suite.xml.name>
       </properties>
     </profile>
 
@@ -39,7 +48,8 @@
         <activeByDefault>true</activeByDefault>
       </activation>
       <properties>
-        <suite.xml.name>${project.basedir}/src/test/resources/com/epam/training/center/homework1/SubtractAndSumCalculatorTestSuite.xml</suite.xml.name>
+        <suite.xml.name>${project.basedir}/src/test/resources/com/epam/training/center/homework1/SubtractAndSumCalculatorTestSuite.xml
+        </suite.xml.name>
       </properties>
     </profile>
 
@@ -47,18 +57,7 @@
   </profiles>
 
   <dependencies>
-    <dependency>
-      <groupId>org.testng</groupId>
-      <artifactId>testng</artifactId>
-      <version>7.4.0</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.assertj</groupId>
-      <artifactId>assertj-core</artifactId>
-      <version>3.22.0</version>
-      <scope>test</scope>
-    </dependency>
+
 
     <dependency>
 
@@ -68,6 +67,12 @@
       <scope>system</scope>
       <systemPath>${basedir}/.lib/calculator-1.0.jar</systemPath>
 
+    </dependency>
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>7.4.0</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
   <build>
