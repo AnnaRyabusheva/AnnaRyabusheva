@@ -2,22 +2,15 @@ package com.epam.tc.homework1;
 
 import static org.testng.Assert.assertEquals;
 
-import com.epam.tat.module4.Calculator;
 import org.testng.annotations.Test;
 
-public class CalculatorSumTest {
+public class CalculatorSumTest extends CalculatorBaseTest {
 
-    @Test
-    public void calculatorSumTest() {
-        Calculator calculator = new Calculator();
-        long actual = calculator.sum(2, 2);
-        assertEquals(actual, 4);
-    }
+    @Test(dataProviderClass = DataProviderDataTestForAllTests.class, dataProvider = "sumData")
+    public void calculatorSumTest(long a, long b, long exprcted) {
 
-    @Test
-    public void calculatorSum2Test() {
-        Calculator calculator = new Calculator();
-        long actual = calculator.sum(5, 2);
-        assertEquals(actual, 7);
+        long actual = calculator.sum(a, b);
+        assertEquals(actual, exprcted);
     }
 }
+

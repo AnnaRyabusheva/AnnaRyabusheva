@@ -6,17 +6,10 @@ import org.testng.annotations.Test;
 
 public class CalculatorSubtractTest extends CalculatorBaseTest {
 
-    @Test
-    public void calculatorSubTest() {
+    @Test(dataProviderClass = DataProviderDataTestForAllTests.class, dataProvider = "subtractData")
+    public void calculatorSubTest(long a, long b, long expected) {
 
-        long actual = calculator.sub(2, 2);
-        assertEquals(actual, 0);
-    }
-
-    @Test
-    public void calculatorSub2Test() {
-
-        long actual = calculator.sub(6, 2);
-        assertEquals(actual, 4);
+        long actual = calculator.sub(a, b);
+        assertEquals(actual, expected);
     }
 }

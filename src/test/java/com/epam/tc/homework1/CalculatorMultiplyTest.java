@@ -6,10 +6,10 @@ import org.testng.annotations.Test;
 
 public class CalculatorMultiplyTest extends CalculatorBaseTest {
 
-    @Test
-    public void calculatorMultiplyTest() {
+    @Test(dataProviderClass = DataProviderDataTestForAllTests.class, dataProvider = "multiplyData")
+    public void calculatorMultiplyTest(long a, long b, long expected) {
 
-        long actual = calculator.mult(2, 2);
-        assertEquals(actual, 4);
+        long actual = calculator.mult(a, b);
+        assertEquals(actual, expected);
     }
 }
