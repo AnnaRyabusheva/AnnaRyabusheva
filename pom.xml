@@ -15,10 +15,9 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <checkstyle.version>9.3</checkstyle.version>
     <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
-    <groupId>org.testng</groupId>
-    <artifactId>testng</artifactId>
-    <version>7.4.0</version>
-    <scope>test</scope>
+    <testng.version>7.5</testng.version>
+    <assertj-core.version>3.22.0</assertj-core.version>
+
     <groupId>org.assertj</groupId>
     <artifactId>assertj-core</artifactId>
     <version>3.22.0</version>
@@ -57,8 +56,19 @@
   </profiles>
 
   <dependencies>
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>${assertj-core.version}</version>
+      <scope>test</scope>
+    </dependency>
 
-
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>${testng.version}</version>
+      <scope>test</scope>
+    </dependency>
     <dependency>
 
       <groupId>com.roufid.tutorials</groupId>
@@ -68,12 +78,7 @@
       <systemPath>${basedir}/.lib/calculator-1.0.jar</systemPath>
 
     </dependency>
-    <dependency>
-      <groupId>org.testng</groupId>
-      <artifactId>testng</artifactId>
-      <version>7.4.0</version>
-      <scope>test</scope>
-    </dependency>
+
   </dependencies>
   <build>
     <plugins>
