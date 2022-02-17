@@ -7,10 +7,10 @@ import org.testng.annotations.Test;
 public class CalculatorSumTest extends CalculatorBaseTest {
 
     @Test(dataProviderClass = DataProviderDataTestForAllTests.class, dataProvider = "sumData")
-    public void calculatorSumTest(long a, long b, long exprcted) {
+    public void calculatorSumTest(long a, long b, long expected) {
 
         long actual = calculator.sum(a, b);
-        assertEquals(actual, exprcted);
+        assertEquals(actual, expected);
     }
 }
 

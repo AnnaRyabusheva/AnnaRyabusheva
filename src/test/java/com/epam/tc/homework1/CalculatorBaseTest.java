@@ -5,7 +5,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 public abstract class CalculatorBaseTest {
-    protected  Calculator calculator;
+    protected Calculator calculator;
 
     @BeforeMethod
     public void setUp() {
