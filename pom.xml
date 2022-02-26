@@ -17,11 +17,25 @@
     <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
     <testng.version>7.5</testng.version>
     <assertj-core.version>3.22.0</assertj-core.version>
-    <slf4j-nop.version>1.7.35</slf4j-nop.version>
+
+
+    <selenium-java.version>4.1.2</selenium-java.version>
     <junit-jupiter.version>5.8.2</junit-jupiter.version>
+    <webdrivermanager.version>5.1.0</webdrivermanager.version>
+    <slf4j-log4j12.version>2.0.0-alpha6</slf4j-log4j12.version>
   </properties>
 
   <profiles>
+    <profile>
+      <id>test-suite-for-website</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <suite.xml.name>${project.basedir}/src/test/resources/com/epam/training/center/homework2/TestSuiteForWebSite.xml</suite.xml.name>
+      </properties>
+    </profile>
+
     <profile>
       <id>homework1-all-calculator-test-suite</id>
       <properties>
@@ -40,7 +54,7 @@
     <profile>
       <id>homework1-sum-sub-calculator-test-suite</id>
       <activation>
-        <activeByDefault>true</activeByDefault>
+        <activeByDefault>false</activeByDefault>
       </activation>
       <properties>
         <suite.xml.name>${project.basedir}/src/test/resources/com/epam/training/center/homework1/SubtractAndSumCalculatorTestSuite.xml
@@ -58,6 +72,13 @@
       <version>${assertj-core.version}</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>${slf4j-log4j12.version}</version>
+      <scope>test</scope>
+    </dependency>
+
 
     <dependency>
       <groupId>org.testng</groupId>
@@ -66,20 +87,15 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-nop</artifactId>
-      <version>${slf4j-nop.version}</version>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>webdrivermanager</artifactId>
+      <version>${webdrivermanager.version}</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
-      <version>4.1.2</version>
-    </dependency>
-    <dependency>
-      <groupId>io.github.bonigarcia</groupId>
-      <artifactId>webdrivermanager</artifactId>
-      <version>5.0.3</version>
-      <scope>test</scope>
+      <version>${selenium-java.version}</version>
     </dependency>
     <dependency>
 
@@ -89,12 +105,6 @@
       <scope>system</scope>
       <systemPath>${basedir}/.lib/calculator-1.0.jar</systemPath>
 
-    </dependency>
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter</artifactId>
-      <version>${junit-jupiter.version}</version>
-      <scope>test</scope>
     </dependency>
 
   </dependencies>
