@@ -142,6 +142,7 @@ public class Exercise2Test {
             driver.findElement(By.xpath("//div[@name=\"log-sidebar\"]//ul[@class=\"panel-body-list logs\"]/li[1]"))
                   .getText();
         softly.assertThat(verifyColorBlue).contains("Colors: value changed to Blue");
+        softly.assertAll();
     }
 }
 

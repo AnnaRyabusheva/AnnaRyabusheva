@@ -182,6 +182,7 @@ public class Exercise1Test {
                                                    + "//*[contains(text(),'Elements packs')]"))
                                            .getText();
         softly.assertThat(leftElementsPConTxt).isEqualTo("Elements packs");
+        softly.assertAll();
     }
 }
 
