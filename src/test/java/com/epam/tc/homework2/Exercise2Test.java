@@ -52,12 +52,12 @@ public class Exercise2Test {
         softly.assertThat(txtUserName).isEqualTo("ROMAN IOVLEV");
 
         // 5.Open through the header menu Service -> Different Elements Page
-        WebElement proba = driver.findElement(By.xpath("//div[@class=\"uui-header dark-gray\"]"
+        WebElement headerClickElement = driver.findElement(By.xpath("//div[@class=\"uui-header dark-gray\"]"
             + "//a[@data-toggle=\"dropdown\"]"));
-        proba.click();
+        headerClickElement.click();
 
-        WebElement dropdown = driver.findElement(By.xpath("//ul[@class=\"dropdown-menu\"]/li[8]"));
-        dropdown.click();
+        WebElement dropdownMenuClick = driver.findElement(By.xpath("//ul[@class=\"dropdown-menu\"]/li[8]"));
+        dropdownMenuClick.click();
 
         String differentPageOpen = driver.findElement(By.xpath("//div[@class=\"support-title\"]")).getText();
         softly.assertThat(differentPageOpen).isEqualTo("Support");
