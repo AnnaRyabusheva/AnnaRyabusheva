@@ -14,50 +14,38 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class Exercise2Test {
-
-    private WebDriver driver;
-
-    @BeforeMethod
-    // 12.Close Browser
-    public void setUp() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
-    }
-
-    @AfterMethod
-    public void tearDown() {
-        driver.quit();
-    }
+public class Exercise2Test extends BaseClassForExercise2 {
 
     @Test
     public void testOpenPage() {
         SoftAssertions softly = new SoftAssertions();
         driver.manage().window().maximize();
+
         //1. Open test site by URL
         driver.get("https://jdi-testing.github.io/jdi-light/index.html ");
+
         //2. Assert Browser title "Home Page"
         softly.assertThat(driver.getTitle()).isEqualTo("Home Page");
+
         // Find login's form and click
         driver.findElements(By.className("navbar-right")).get(0).click();
+
         // 3.Perform login
         driver.findElement(By.id("name")).sendKeys("Roman");
         driver.findElement(By.id("password")).sendKeys("Jdi1234");
 
         // Click to bottom Enter
         driver.findElement(By.id("login-button")).click();
+
         // 4. Assert Username is logging
         String txtUserName = driver.findElement(By.id("user-name")).getText();
         softly.assertThat(txtUserName).isEqualTo("ROMAN IOVLEV");
 
         // 5.Open through the header menu Service -> Different Elements Page
-        WebElement headerClickElement = driver.findElement(By.xpath("//div[@class=\"uui-header dark-gray\"]"
-            + "//a[@data-toggle=\"dropdown\"]"));
-        headerClickElement.click();
+        driver.findElement(By.cssSelector("ul.uui-navigation > li a.dropdown-toggle")).click();
 
-        WebElement dropdownMenuClick = driver.findElement(By.xpath("//ul[@class=\"dropdown-menu\"]/li[8]"));
-        dropdownMenuClick.click();
+        driver.findElement(By.xpath("//ul[@class=\"dropdown-menu\"]//a[contains(text(),'Different elements')]"))
+              .click();
 
         String differentPageOpen = driver.findElement(By.xpath("//div[@class=\"support-title\"]")).getText();
         softly.assertThat(differentPageOpen).isEqualTo("Support");
@@ -68,6 +56,7 @@ public class Exercise2Test {
             driver.findElement(By.xpath("//div[@name=\"log-sidebar\"]//ul[@class=\"panel-body-list logs\"]/li[1]"))
                   .getText();
         softly.assertThat(verifyWater).contains("Water: condition changed to true");
+
         // 6.Select checkboxes Wind
         driver.findElement(By.xpath("//label[@class=\"label-checkbox\"][3]/input")).click();
         String verifyWind =
