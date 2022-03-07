@@ -56,10 +56,12 @@ public class Exercise1Test extends BaseClassForExercise2 {
 
         // 5.Assert that there are 4 items on the header section are displayed,
         // and they have proper texts( element= Home)
-        List<WebElement> headerMenuElements = driver.findElements(By.cssSelector("ul.uui-navigation > li"));
+
+        List<WebElement> headerMenuElements =
+            driver.findElements(By.xpath("//ul[@class='uui-navigation nav navbar-nav m-l8']/li/a"));
         List<String> textsHeaderMenuElements =
             headerMenuElements.stream().map(WebElement::getText).collect(Collectors.toList());
-        softly.assertThat(textsHeaderMenuElements).hasSameElementsAs(listOfHeaderMenu);
+        softly.assertThat(textsHeaderMenuElements).containsExactlyElementsOf(listOfHeaderMenu);
 
         // 6.Assert that there are 4 images on the Index Page, and they are displayed
 
@@ -91,10 +93,11 @@ public class Exercise1Test extends BaseClassForExercise2 {
         driver.switchTo().defaultContent();
 
         // 11.Assert that there are 5 items in the Left Section are displayed, and they have proper text
-        List<WebElement> leftMenuElements = driver.findElements(By.cssSelector("ul.sidebar-menu >li span"));
+        List<WebElement> leftMenuElements = driver.findElements(By.cssSelector("ul.sidebar-menu >li > a > span"));
         List<String> textsLeftMenuElements =
             leftMenuElements.stream().map(WebElement::getText).collect(Collectors.toList());
         softly.assertThat(textsLeftMenuElements).hasSameElementsAs(listOfLeftMenu);
+        softly.assertAll();
     }
 }
 
