@@ -1,32 +1,11 @@
 package com.epam.tc.homework2;
 
-import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 public class Exercise2Test extends BaseClass {
-
-    //    public void clickForLabelCheckbox(String checkBox) {
-    //        List<WebElement> checkBoxList = driver.findElements(By.className("label-checkbox"));
-    //        for (WebElement elem : checkBoxList) {
-    //            if (elem.getText().equals(checkBox)) {
-    //                elem.click();
-    //                break;
-    //            }
-    //        }
-    //    }
-    //
-    //    public void clickForLabelRadio(String checkRadioBox) {
-    //        List<WebElement> radioBoxList = driver.findElements(By.className("label-radio"));
-    //        for (WebElement elem : radioBoxList) {
-    //            if (elem.getText().equals(checkRadioBox)) {
-    //                elem.click();
-    //                break;
-    //            }
-    //        }
-    //    }
 
     @Test
     public void testOpenPage() {
