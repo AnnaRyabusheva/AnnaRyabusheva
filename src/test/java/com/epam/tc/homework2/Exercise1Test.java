@@ -3,12 +3,11 @@ package com.epam.tc.homework2;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-import org.assertj.core.api.SoftAssertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-public class Exercise1Test extends BaseClassForExercise2 {
+public class Exercise1Test extends BaseClass {
 
     @Test
     public void testOpenPage() {
@@ -33,7 +32,7 @@ public class Exercise1Test extends BaseClassForExercise2 {
         listOfLeftMenu.add("Metals & Colors");
         listOfLeftMenu.add("Elements packs");
 
-        SoftAssertions softly = new SoftAssertions();
+//        SoftAssertions softly = new SoftAssertions();
         // 1.  Open test site by URL
         driver.get("https://jdi-testing.github.io/jdi-light/index.html");
 
