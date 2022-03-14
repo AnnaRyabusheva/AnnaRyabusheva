@@ -32,7 +32,7 @@ public class Exercise1Test extends BaseClass {
         listOfLeftMenu.add("Metals & Colors");
         listOfLeftMenu.add("Elements packs");
 
-//        SoftAssertions softly = new SoftAssertions();
+
         // 1.  Open test site by URL
         driver.get("https://jdi-testing.github.io/jdi-light/index.html");
 

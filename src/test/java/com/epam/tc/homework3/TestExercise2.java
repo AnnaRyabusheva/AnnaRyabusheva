@@ -1,15 +1,17 @@
 package com.epam.tc.homework3;
 
-import com.epam.tc.homework3.PageObjectVoids.DifferentElementsPage;
+import com.epam.tc.homework3.page.object.voids.DifferentElementsPage;
+import com.epam.tc.homework3.page.object.voids.PageObjectComposite;
 import org.assertj.core.api.SoftAssertions;
 import org.testng.annotations.Test;
 
 public class TestExercise2 extends BaseClass3 {
 
     @Test
-    public void TestExerciseForHomeWork() {
-        HomeWorkIndexPage homeWorkIndexPage = new HomeWorkIndexPage(driver);
+    public void testExerciseForHomeWork() {
+
         PageObjectComposite pageObjectComposite = new PageObjectComposite(driver);
+
         SoftAssertions softly = new SoftAssertions();
         //1. Open test site by URL
 
@@ -20,8 +22,8 @@ public class TestExercise2 extends BaseClass3 {
         pageObjectComposite.login("Roman", "Jdi1234");
 
         // 4. Assert Username is logging
-        homeWorkIndexPage.returnTextOfElement();
-        softly.assertThat(homeWorkIndexPage.returnTextOfElement()).isEqualTo("ROMAN IOVLEV");
+        pageObjectComposite.returnTextOfElement();
+        softly.assertThat(pageObjectComposite.returnTextOfElement()).isEqualTo("ROMAN IOVLEV");
 
         // 5.Open through the header menu Service -> Different Elements Page
         DifferentElementsPage differentElementsPage = new DifferentElementsPage(driver);
@@ -76,3 +78,4 @@ public class TestExercise2 extends BaseClass3 {
         softly.assertAll();
     }
 }
+
