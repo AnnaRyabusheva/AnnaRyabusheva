@@ -1,11 +1,9 @@
-package com.epam.tc.homework3.PageObjectVoids;
+package com.epam.tc.homework3.page.object.voids;
 
 import com.epam.tc.homework3.BaseClass3;
 import java.util.List;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
@@ -69,18 +67,9 @@ public class DifferentElementsPage extends BaseClass3 {
             }
         }
     }
-    public void selectColor(String color){
+
+    public void selectColor(String color) {
         Select selectColor = new Select(selectElem);
         selectColor.selectByVisibleText(color);
-
     }
-    public void selectColorYellow(){
-        Select selectColor = new Select(selectElem);
-        selectColor.selectByVisibleText("Yellow");
-    }
-    public void selectColorRed(){
-        Select selectColor = new Select(selectElem);
-        selectColor.selectByVisibleText("Red");
-    }
-
 }

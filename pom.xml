@@ -27,9 +27,19 @@
 
   <profiles>
     <profile>
-      <id>test-suite-for-website</id>
+      <id>test-suite-for-home-work-3</id>
       <activation>
         <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <suite.xml.name>${project.basedir}\src\test\java\com\epam\tc\homework3\TestExercise1.java</suite.xml.name>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>test-suite-for-website</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
       </activation>
       <properties>
         <suite.xml.name>${project.basedir}/src/test/resources/com/epam/training/center/homework2/TestSuiteForWebSite.xml</suite.xml.name>

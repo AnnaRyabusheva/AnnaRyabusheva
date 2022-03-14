@@ -9,7 +9,6 @@ public class Exercise2Test extends BaseClass {
 
     @Test
     public void testOpenPage() {
-        String lastLog;
 
         //1. Open test site by URL
         driver.get("https://jdi-testing.github.io/jdi-light/index.html ");
@@ -26,7 +25,6 @@ public class Exercise2Test extends BaseClass {
 
         // Click to bottom Enter
         driver.findElement(By.id("login-button")).click();
-
         // 4. Assert Username is logging
         String txtUserName = driver.findElement(By.id("user-name")).getText();
         softly.assertThat(txtUserName).isEqualTo("ROMAN IOVLEV");
@@ -41,6 +39,7 @@ public class Exercise2Test extends BaseClass {
         softly.assertThat(differentPageOpen).isEqualTo("Support");
 
         // 6.Select checkboxes Water
+        String lastLog;
 
         clickForLabelCheckbox("Water");
         lastLog = driver.findElement(By.xpath("//ul[@class='panel-body-list logs']/li[1]"))
