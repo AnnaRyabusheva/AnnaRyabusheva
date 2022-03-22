@@ -1,6 +1,6 @@
-package com.epam.tc.homework3.page.object.voids;
+package homeworkthree.page.object.voids;
 
-import com.epam.tc.homework3.BaseClass3;
+import homeworkthree.BaseClass3;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.openqa.selenium.WebDriver;

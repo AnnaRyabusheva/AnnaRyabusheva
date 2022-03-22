@@ -1,7 +1,8 @@
 package com.epam.tc.homework3;
 
-import com.epam.tc.homework3.page.object.voids.DifferentElementsPage;
-import com.epam.tc.homework3.page.object.voids.PageObjectComposite;
+import homeworkthree.BaseClass3;
+import homeworkthree.page.object.voids.DifferentElementsPage;
+import homeworkthree.page.object.voids.PageObjectComposite;
 import org.assertj.core.api.SoftAssertions;
 import org.testng.annotations.Test;
 
