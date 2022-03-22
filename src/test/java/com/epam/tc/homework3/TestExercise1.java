@@ -1,7 +1,8 @@
 package com.epam.tc.homework3;
 
-import com.epam.tc.homework3.page.object.voids.HomeWorkIndexPage;
-import com.epam.tc.homework3.page.object.voids.PageObjectComposite;
+import homeworkthree.BaseClass3;
+import homeworkthree.page.object.voids.HomeWorkIndexPage;
+import homeworkthree.page.object.voids.PageObjectComposite;
 import java.util.ArrayList;
 import java.util.List;
 import org.assertj.core.api.SoftAssertions;
