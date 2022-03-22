@@ -1,14 +1,14 @@
 package homeworkthree.page.object.voids;
 
-import homeworkthree.BaseClass3;
 import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class DifferentElementsPage extends BaseClass3 {
+public class DifferentElementsPage extends BaseClassForPageObject {
     @FindBy(css = "ul.uui-navigation > li a.dropdown-toggle")
     private WebElement serviceButton;
 
@@ -30,7 +30,8 @@ public class DifferentElementsPage extends BaseClass3 {
     @FindBy(xpath = "//div[@class=\"colors\"]//select[@class=\"uui-form-element\"]")
     private WebElement selectElem;
 
-    public DifferentElementsPage(WebDriver driver) {
+    public DifferentElementsPage(WebDriver driver, WebDriverWait wait) {
+        super(driver, wait);
         PageFactory.initElements(driver, this);
     }
 

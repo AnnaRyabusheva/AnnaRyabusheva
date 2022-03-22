@@ -1,6 +1,5 @@
 package com.epam.tc.homework3;
 
-import homeworkthree.BaseClass3;
 import homeworkthree.page.object.voids.HomeWorkIndexPage;
 import homeworkthree.page.object.voids.PageObjectComposite;
 import java.util.ArrayList;
@@ -36,7 +35,7 @@ public class TestExercise1 extends BaseClass3 {
         listOfLeftMenu.add("Elements packs");
 
         SoftAssertions softly = new SoftAssertions();
-        PageObjectComposite pageObjectComposite = new PageObjectComposite(driver);
+        PageObjectComposite pageObjectComposite = new PageObjectComposite(driver, wait);
 
         // 2. Assert Browser title "Home Page"
         softly.assertThat(driver.getTitle()).isEqualTo("Home Page");
@@ -54,7 +53,7 @@ public class TestExercise1 extends BaseClass3 {
         softly.assertThat(pageObjectComposite.getHeaderMenuElements()).hasSameElementsAs(listOfHeaderMenu);
 
         // 6.Assert that there are 4 images on the Index Page, and they are displayed
-        HomeWorkIndexPage homeWorkIndexPage = new HomeWorkIndexPage(driver);
+        HomeWorkIndexPage homeWorkIndexPage = new HomeWorkIndexPage(driver, wait);
 
         softly.assertThat(homeWorkIndexPage.isIconPracticeImageDisplayed()).isTrue();
 
@@ -84,6 +83,5 @@ public class TestExercise1 extends BaseClass3 {
 
         // 12.Close Browser
         softly.assertAll();
-
     }
 }

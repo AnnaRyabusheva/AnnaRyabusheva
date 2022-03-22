@@ -1,6 +1,5 @@
 package com.epam.tc.homework3;
 
-import homeworkthree.BaseClass3;
 import homeworkthree.page.object.voids.DifferentElementsPage;
 import homeworkthree.page.object.voids.PageObjectComposite;
 import org.assertj.core.api.SoftAssertions;
@@ -11,7 +10,7 @@ public class TestExercise2 extends BaseClass3 {
     @Test
     public void testExerciseForHomeWork() {
 
-        PageObjectComposite pageObjectComposite = new PageObjectComposite(driver);
+        PageObjectComposite pageObjectComposite = new PageObjectComposite(driver, wait);
 
         SoftAssertions softly = new SoftAssertions();
         //1. Open test site by URL
@@ -27,7 +26,7 @@ public class TestExercise2 extends BaseClass3 {
         softly.assertThat(pageObjectComposite.returnTextOfElement()).isEqualTo("ROMAN IOVLEV");
 
         // 5.Open through the header menu Service -> Different Elements Page
-        DifferentElementsPage differentElementsPage = new DifferentElementsPage(driver);
+        DifferentElementsPage differentElementsPage = new DifferentElementsPage(driver, wait);
         differentElementsPage.differentPageOpen();
         differentElementsPage.returnTextOfTitle();
         softly.assertThat(differentElementsPage.returnTextOfTitle()).isEqualTo("Support");

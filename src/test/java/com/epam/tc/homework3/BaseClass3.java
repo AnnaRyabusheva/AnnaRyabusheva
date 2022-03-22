@@ -1,4 +1,4 @@
-package homeworkthree;
+package com.epam.tc.homework3;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import java.time.Duration;
