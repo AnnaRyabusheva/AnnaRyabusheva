@@ -82,6 +82,7 @@
       <version>${assertj-core.version}</version>
       <scope>test</scope>
     </dependency>
+
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-log4j12</artifactId>
@@ -96,17 +97,20 @@
       <version>${testng.version}</version>
       <scope>test</scope>
     </dependency>
+
     <dependency>
       <groupId>io.github.bonigarcia</groupId>
       <artifactId>webdrivermanager</artifactId>
       <version>${webdrivermanager.version}</version>
       <scope>test</scope>
     </dependency>
+
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
       <version>${selenium-java.version}</version>
     </dependency>
+
     <dependency>
 
       <groupId>com.roufid.tutorials</groupId>
@@ -116,18 +120,13 @@
       <systemPath>${basedir}/.lib/calculator-1.0.jar</systemPath>
 
     </dependency>
-    <dependency>
-      <groupId>org.testng</groupId>
-      <artifactId>testng</artifactId>
-      <version>7.5</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.github.bonigarcia</groupId>
-      <artifactId>webdrivermanager</artifactId>
-      <version>5.1.0</version>
-      <scope>compile</scope>
-    </dependency>
+
+<!--    <dependency>-->
+<!--      <groupId>io.github.bonigarcia</groupId>-->
+<!--      <artifactId>webdrivermanager</artifactId>-->
+<!--      <version>5.1.0</version>-->
+<!--      <scope>compile</scope>-->
+<!--    </dependency>-->
 
 
   </dependencies>

@@ -1,15 +1,16 @@
 package homeworkthree.page.object.voids;
 
-import homeworkthree.BaseClass3;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class PageObjectComposite extends BaseClass3 {
-    public PageObjectComposite(WebDriver driver) {
+public class PageObjectComposite extends BaseClassForPageObject {
+    public PageObjectComposite(WebDriver driver, WebDriverWait wait) {
+        super(driver, wait);
         PageFactory.initElements(driver, this);
     }
 

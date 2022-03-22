@@ -1,14 +1,14 @@
 package homeworkthree.page.object.voids;
 
-import homeworkthree.BaseClass3;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class HomeWorkIndexPage extends BaseClass3 {
+public class HomeWorkIndexPage extends BaseClassForPageObject {
 
     @FindBy(xpath = "//ul[@class='uui-navigation nav navbar-nav m-l8']/li/a")
     private List<WebElement> headerMenuElements;
@@ -34,7 +34,8 @@ public class HomeWorkIndexPage extends BaseClass3 {
     @FindBy(className = "icon-base")
     private WebElement imageBase;
 
-    public HomeWorkIndexPage(WebDriver driver) {
+    public HomeWorkIndexPage(WebDriver driver, WebDriverWait wait) {
+        super(driver, wait);
         PageFactory.initElements(driver, this);
     }
 
